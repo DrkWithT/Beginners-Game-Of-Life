@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>ACM Game Of Life</title>
     <!-- 
         By: Beginner's WS Team at CSULA ACM
@@ -10,6 +11,25 @@
      -->
 </head>
 <body>
-    <!-- TODO: add CSS, Canvas, and game logic in repository. -->
+    <article id="game-box">
+        <section class="screen-box">
+            <!-- Draw cells on JS Canvas -->
+            <canvas id="game-board"></canvas>
+        </section>
+        <section class="controls-box">
+            <!-- Controls (Some will open menus later) -->
+            <ul id="control-bar">
+                <li class="control-item">
+                    <button class="control-btn">Pause</button>
+                </li>
+                <li class="control-item">
+                    <button class="control-btn">Reset</button>
+                </li>
+                <li class="control-item">
+                    <button class="control-btn">Tool</button>
+                </li>
+            </ul>
+        </section>
+    </article>
 </body>
 </html>
