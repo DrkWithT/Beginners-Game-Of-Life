@@ -16,10 +16,10 @@ const MIN_BOARD_SIDE_LENGTH = 16;
  */
 class Board {
     /** @type {number[][]} */
-    cells
+    #cells
 
     /** @type {number} */
-    sideLength
+    #sideLength
 
     /**
      * @description Creates and initializes a Board object. Arguments are checked.
@@ -31,32 +31,32 @@ class Board {
         }
 
         // Initialize board variables before use.
-        const cellCount = this.sideLength * this.sideLength;
-        this.sideLength = sideLength;
-        this.cells = new Array(cellCount);
+        const cellCount = sideLength * sideLength;
+        this.#sideLength = sideLength;
+        this.#cells = new Array(cellCount);
 
         // Fill N * N cells in the N by N board with empty value.
-        this.cells.fill(0, 0, cellCount);
+        this.#cells.fill(0, 0, cellCount);
     }
 
     getCellAt(row, col) {
         const index = this.sideLength * row + col;
 
-        if (index < 0 || index >= this.sideLength * this.sideLength) {
+        if (index < 0 || index >= this.#sideLength * this.#sideLength) {
             throw new Error(`Board.getCellAt(): Invalid index ${index}`);
         }
 
-        return this.cells[index];
+        return this.#cells[index];
     }
 
     setCellAt(row, col, cellValue) {
-        const index = this.sideLength * row + col;
+        const index = this.#sideLength * row + col;
 
-        if (index < 0 || index >= this.sideLength * this.sideLength) {
+        if (index < 0 || index >= this.#sideLength * this.#sideLength) {
             throw new Error(`Board.getCellAt(): Invalid index ${index}`);
         }
 
-        this.cells[index] = cellValue;
+        this.#cells[index] = cellValue;
     }
 
     /**
@@ -68,13 +68,13 @@ class Board {
             /*
                 Because the board's data is actually a 1-D array, we need to do math for accessing the right spots. N * N sized array representing a N by N means that we need (row * N + col) as the index. `row` and `col` should be at most N.
             */
-            const realIndex = locationPair.row * this.sideLength + locationPair.col;
+            const realIndex = locationPair.row * this.#sideLength + locationPair.col;
 
-            this.cells[realIndex] = 1;
+            this.#cells[realIndex] = 1;
         }, this);
     }
 
     clearAllCells() {
-        this.cells.fill(0, 0, this.sideLength * this.sideLength);
+        this.#cells.fill(0, 0, this.#sideLength * this.#sideLength);
     }
 }
