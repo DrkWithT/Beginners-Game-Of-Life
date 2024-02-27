@@ -1,3 +1,8 @@
+/*
+    style.css
+    Tip: Refresh to see changes.
+*/
+
 body {
     display: flex;
     align-items: center;
@@ -9,16 +14,13 @@ body {
 }
 
 article#game-box {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
     border: none;
     border-radius: 16px;
     margin: 0;
     padding: 0;
 }
 
-.screen-box > #game-board {
+.screen-box #game-board {
     margin: 0;
     padding: 4px;
     border: 2px solid slategray;
@@ -27,7 +29,8 @@ article#game-box {
     color: whitesmoke;
 }
 
-.controls-box > #control-bar {
+.controls-box #control-bar {
+    margin-top: 8px;
     padding: 8px;
     margin: 0;
     text-align: center;
@@ -36,18 +39,23 @@ article#game-box {
 ul#control-bar {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    color: gold;
+    list-style-type: none;
 }
 
-li.control-item > button.control-btn {
+li.control-item button.control-btn {
     display: block;
+    margin-right: 16px;
+    padding: 16px;
     border: silver;
+    border-radius: 8px;
     background-color: goldenrod;
+    font-size: 16pt;
+    font-weight: bold;
     color: whitesmoke;
 }
 
 button.control-btn:hover {
+    display: block;
     background-color: gold;
     color: white;
 }

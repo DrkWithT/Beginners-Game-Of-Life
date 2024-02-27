@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        CSS for UI
+    -->
     <link rel="stylesheet" href="css/style.css">
     <title>ACM Game Of Life</title>
     <!-- 
@@ -14,7 +17,7 @@
     <article id="game-box">
         <section class="screen-box">
             <!-- Draw cells on JS Canvas -->
-            <canvas id="game-board"></canvas>
+            <canvas id="game-board" width="480" height="480"></canvas>
         </section>
         <section class="controls-box">
             <!-- Controls (Some will open menus later) -->
@@ -26,7 +29,7 @@
                     <button class="control-btn">Reset</button>
                 </li>
                 <li class="control-item">
-                    <button class="control-btn">Tool</button>
+                    <button class="control-btn">Place Cell</button>
                 </li>
             </ul>
         </section>
