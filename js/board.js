@@ -9,13 +9,13 @@
  * @description Minimum allowed length of side in cells.
  * @type {number}
  */
-const MIN_BOARD_SIDE_LENGTH = 16;
+const MIN_BOARD_SIDE_LENGTH = 20;
 
 /**
  * @description Wraps an N^2 sized array to hold all cell data for Game Of Life.
  */
 class Board {
-    /** @type {number[][]} */
+    /** @type {number[]} */
     #cells
 
     /** @type {number} */
@@ -40,10 +40,10 @@ class Board {
     }
 
     getCellAt(row, col) {
-        const index = this.sideLength * row + col;
+        const index = this.#sideLength * row + col;
 
         if (index < 0 || index >= this.#sideLength * this.#sideLength) {
-            throw new Error(`Board.getCellAt(): Invalid index ${index}`);
+            return null;
         }
 
         return this.#cells[index];
@@ -53,7 +53,7 @@ class Board {
         const index = this.#sideLength * row + col;
 
         if (index < 0 || index >= this.#sideLength * this.#sideLength) {
-            throw new Error(`Board.getCellAt(): Invalid index ${index}`);
+            return;
         }
 
         this.#cells[index] = cellValue;
